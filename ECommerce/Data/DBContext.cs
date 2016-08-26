@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using ECommerce.Data.Order;
 
 namespace ECommerce.Data
 {
-    public class DBContext : DbContext
+    public class DBContext : DbContext, IDBContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -19,6 +20,8 @@ namespace ECommerce.Data
         {
         }
 
-        public System.Data.Entity.DbSet<ECommerce.Data.Order.Order> Orders { get; set; }
+        public IDbSet<Order.Order> Orders { get; set; }
+
+        
     }
 }
