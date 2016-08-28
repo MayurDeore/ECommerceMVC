@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ECommerce.Data.Order;
 using System.Data.Entity;
+using ECommerce.Data.Brand;
 
 namespace ECommerce.Test
 {
@@ -15,8 +16,15 @@ namespace ECommerce.Test
         {
             this.Orders = new TestDbSet<Order>();
         }
-        
+
+        public IDbSet<Brand> Brands
+        {
+            get;
+            set;
+        }
+
         public IDbSet<Order> Orders { get; set; }
+
        
     }
 }

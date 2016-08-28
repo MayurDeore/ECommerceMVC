@@ -1,6 +1,7 @@
 ﻿using ECommerce.Data.User;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -15,8 +16,9 @@ namespace ECommerce.Data.Order
         public string TransID { get; set; }
         public double Amount { get; set; }
         public int Quantity { get; set; }
-        //public int UserAddressId { get; set; }
-        //public virtual UserAddress UserAddress { get; set; }
+        [ForeignKey("UserAddress")]
+        public int UserAddressId { get; set; }
+        public virtual UserAddress UserAddress { get; set; }
 
     }
 }

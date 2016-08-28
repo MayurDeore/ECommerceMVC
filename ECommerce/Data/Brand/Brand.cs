@@ -7,7 +7,7 @@ namespace ECommerce.Data.Brand
     {
         private ICollection<ProductModel> _product;
 
-        public int BrandID { get; set; }
+        public int Id { get; set; }
         public string BrandName { get; set; }
         public string BrandCode { get; set; }
         public bool isActive { get; set; }

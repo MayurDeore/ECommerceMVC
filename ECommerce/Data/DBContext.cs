@@ -22,6 +22,6 @@ namespace ECommerce.Data
 
         public IDbSet<Order.Order> Orders { get; set; }
 
-        
+        public IDbSet<Brand.Brand> Brands { get; set; }
     }
 }

@@ -6,5 +6,7 @@ namespace ECommerce.Data
     public interface IDBContext
     {
         IDbSet<Order.Order> Orders { get; set; }
+        IDbSet<Brand.Brand> Brands { get; set; }
+        
     }
 }

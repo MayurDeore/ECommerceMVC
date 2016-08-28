@@ -9,11 +9,16 @@ using System.Web.Mvc;
 using ECommerce.Data;
 using ECommerce.Data.Order;
 
-namespace ECommerce.Web.Controllers
+namespace ECommerce.Web.Admin.Areas.Controllers
 {
     public class OrdersController : Controller
     {
-        private DBContext db = new DBContext();
+        private DBContext db;
+
+        public OrdersController()
+        {
+            this.db = new DBContext();
+        }
 
         // GET: Orders
         public ActionResult Index()
@@ -83,7 +88,7 @@ namespace ECommerce.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                //db.Etry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -120,7 +125,7 @@ namespace ECommerce.Web.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

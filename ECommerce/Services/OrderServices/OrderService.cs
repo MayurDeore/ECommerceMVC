@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Services.OrderServices
 {
-    public class OrderService 
+    public class OrderService :  IOrderService
     {
         private IDBContext _context;
         

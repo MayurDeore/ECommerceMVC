@@ -1,5 +1,6 @@
 ﻿using ECommerce.Data.Category;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECommerce.Data.Product
 {
@@ -14,8 +15,9 @@ namespace ECommerce.Data.Product
         public bool isActive { get; set; }
         public bool isDeleted { get; set; }
         public string Description { get; set; }
-
+        [ForeignKey("SubCategory")]
         public int SubCategoryID { get; set; }
+        [ForeignKey("Brand")]
         public int BrandID { get; set; }
 
         public virtual SubCategory SubCategory { get; set; }

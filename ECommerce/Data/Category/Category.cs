@@ -8,7 +8,7 @@ namespace ECommerce.Data.Category
     public class Category
     {
         private ICollection<SubCategory> _subcategory;
-        public int CategoryID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public bool isActive { get; set; }
