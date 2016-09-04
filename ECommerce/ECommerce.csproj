@@ -56,10 +56,6 @@
     <Compile Include="Data\Brand\Brand.cs" />
     <Compile Include="Data\Category\Category.cs" />
     <Compile Include="Data\Category\SubCategory.cs" />
-    <Compile Include="Data\DBContext.cs" />
-    <Compile Include="Data\IDBContext.cs" />
-    <Compile Include="Data\IEntity.cs" />
-    <Compile Include="Data\IIntEntity.cs" />
     <Compile Include="Data\Order\Order.cs" />
     <Compile Include="Data\Product\ProductImage.cs" />
     <Compile Include="Data\Product\ProductModel.cs" />
@@ -68,25 +64,38 @@
     <Compile Include="Data\Property\PropertyValue.cs" />
     <Compile Include="Data\User\User.cs" />
     <Compile Include="Data\User\UserAddress.cs" />
-    <Compile Include="Migrations\201608270411004_InitialCreate.cs" />
-    <Compile Include="Migrations\201608270411004_InitialCreate.Designer.cs">
-      <DependentUpon>201608270411004_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201609041710583_initial.cs" />
+    <Compile Include="Migrations\201609041710583_initial.Designer.cs">
+      <DependentUpon>201609041710583_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609041734510_initial1.cs" />
+    <Compile Include="Migrations\201609041734510_initial1.Designer.cs">
+      <DependentUpon>201609041734510_initial1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\DBInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DBContext.cs" />
+    <Compile Include="Services\IDBContext.cs" />
+    <Compile Include="Services\IServices.cs" />
     <Compile Include="Services\OrderServices\IOrderService.cs" />
     <Compile Include="Services\OrderServices\OrderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Business\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608270411004_InitialCreate.resx">
-      <DependentUpon>201608270411004_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201609041710583_initial.resx">
+      <DependentUpon>201609041710583_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609041734510_initial1.resx">
+      <DependentUpon>201609041734510_initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

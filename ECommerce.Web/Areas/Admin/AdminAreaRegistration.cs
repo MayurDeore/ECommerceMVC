@@ -17,7 +17,7 @@ namespace ECommerce.Web.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new {  action = "Index", id = UrlParameter.Optional ,Controller="Brand"}
+                new {  action = "Index", id = UrlParameter.Optional ,Controller="Order"}
             );
         }
     }

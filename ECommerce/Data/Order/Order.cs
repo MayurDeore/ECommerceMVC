@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ECommerce.Data.Order
 {
-    public class Order : IIntEntity
+    public class Order 
     {
         public int Id { get; set; }
         public string Status { get; set; }

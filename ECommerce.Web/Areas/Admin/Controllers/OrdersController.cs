@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ECommerce.Data;
 using ECommerce.Data.Order;
+using ECommerce.Services;
 
 namespace ECommerce.Web.Admin.Areas.Controllers
 {
@@ -23,7 +24,7 @@ namespace ECommerce.Web.Admin.Areas.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            return View(db.Orders.ToList());
+            return View(db.Set<Order>().ToList());
         }
 
         // GET: Orders/Details/5
@@ -33,7 +34,7 @@ namespace ECommerce.Web.Admin.Areas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
+            Order order = db.Set<Order>().Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -56,7 +57,7 @@ namespace ECommerce.Web.Admin.Areas.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Orders.Add(order);
+                db.Set<Order>().Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -71,7 +72,7 @@ namespace ECommerce.Web.Admin.Areas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
+            Order order = db.Set<Order>().Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -102,7 +103,7 @@ namespace ECommerce.Web.Admin.Areas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Find(id);
+            Order order = db.Set<Order>().Find(id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -115,8 +116,8 @@ namespace ECommerce.Web.Admin.Areas.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Orders.Find(id);
-            db.Orders.Remove(order);
+            Order order = db.Set<Order>().Find(id);
+            db.Set<Order>().Remove(order);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

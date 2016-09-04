@@ -70,8 +70,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="OrderTest\OrderServiceTest.cs" />
-    <Compile Include="TestContext.cs" />
-    <Compile Include="TestDbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

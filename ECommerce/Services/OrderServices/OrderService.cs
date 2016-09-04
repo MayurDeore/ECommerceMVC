@@ -1,10 +1,5 @@
-﻿using ECommerce.Data;
-using ECommerce.Data.Order;
-using System;
-using System.Collections.Generic;
+﻿using ECommerce.Data.Order;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ECommerce.Services.OrderServices
 {
@@ -20,7 +15,8 @@ namespace ECommerce.Services.OrderServices
 
         public Order GetByTransId(string transId)
         {
-            return this._context.Orders.Where(x => x.TransID == transId).FirstOrDefault();
+            return this._context.Set<Order>()
+                .Where(x => x.TransID == transId).FirstOrDefault();
         }
 
     }

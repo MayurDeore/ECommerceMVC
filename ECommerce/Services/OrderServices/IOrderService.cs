@@ -2,7 +2,7 @@
 
 namespace ECommerce.Services.OrderServices
 {
-    public interface IOrderService
+    public interface IOrderService : IServices<Order>
     {
         Order GetByTransId(string transId);
     }

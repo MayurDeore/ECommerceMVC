@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ECommerce.Data;
 using ECommerce.Data.Brand;
-
+using ECommerce.Services;
 namespace ECommerce.Web.Areas.Admin.Controllers
 {
     public class BrandsController : Controller
@@ -23,7 +23,7 @@ namespace ECommerce.Web.Areas.Admin.Controllers
         // GET: Admin/Brands
         public ActionResult Index()
         {
-            return View(db.Brands.ToList());
+            return View(db.Set<Brand>().ToList());
         }
 
         // GET: Admin/Brands/Details/5
@@ -33,7 +33,7 @@ namespace ECommerce.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Brand brand = db.Brands.Find(id);
+            Brand brand = db.Set<Brand>().Find(id);
             if (brand == null)
             {
                 return HttpNotFound();
@@ -56,7 +56,7 @@ namespace ECommerce.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Brands.Add(brand);
+                db.Set<Brand>().Add(brand);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -71,7 +71,7 @@ namespace ECommerce.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Brand brand = db.Brands.Find(id);
+            Brand brand = db.Set<Brand>().Find(id);
             if (brand == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace ECommerce.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Brand brand = db.Brands.Find(id);
+            Brand brand = db.Set<Brand>().Find(id);
             if (brand == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace ECommerce.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Brand brand = db.Brands.Find(id);
-            db.Brands.Remove(brand);
+            Brand brand = db.Set<Brand>().Find(id);
+            db.Set<Brand>().Remove(brand);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

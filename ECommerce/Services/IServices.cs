@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerce.Data
+namespace ECommerce.Services
 {
-    public interface IIntEntity : IEntity<int>
+    public interface IServices<T> where T :class
     {
 
+        
     }
 }
