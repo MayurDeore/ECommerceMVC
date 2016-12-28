@@ -80,6 +80,8 @@
     <Compile Include="Services\IServices.cs" />
     <Compile Include="Services\OrderServices\IOrderService.cs" />
     <Compile Include="Services\OrderServices\OrderService.cs" />
+    <Compile Include="Services\ProductServices\IProductService.cs" />
+    <Compile Include="Services\ProductServices\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -11,7 +11,7 @@ namespace ECommerce.Data.Product
         public int Id { get; set; }
         public string Name { get; set; }
         public string FrontImage { get; set; }
-        public string Code { get; set; }
+        public string ProductCode { get; set; }
         public bool isActive { get; set; }
         public bool isDeleted { get; set; }
         public string Description { get; set; }

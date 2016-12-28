@@ -1,5 +1,6 @@
 namespace ECommerce.Migrations
 {
+    using Data.User;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,13 @@ namespace ECommerce.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            
+            context.Set<User>().AddOrUpdate(
+                u=>u.FirstName,
+                new User { FirstName="Admin",LastName="",Username="Admin",Password="ecommerce!@#",ContactNo="0",Email=""}
+                );
+
         }
     }
 }
